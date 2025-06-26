@@ -1,0 +1,40 @@
+---
+title: "El RMS Titanic"
+author: "Natalia Morera"
+format: html
+---
+
+
+```{r}
+library(titanic)
+#| label: cantidad-pasajeros
+#| echo: false
+```
+
+
+
+El [RMS Titanic](https://es.wikipedia.org/wiki/RMS_Titanic) fue un transatlántico británico diseñado por los ingenieros navales Alexander Carlisle y Thomas Andrews y construido en los astilleros de Harland & Wolff (Belfast) para la compañía naviera White Star Line. Fue el segundo de los tres navíos que constituían la clase Olympic, junto a sus buques gemelos, el RMS Olympic y el HMHS Britannic. Fue en su momento el barco más grande y lujoso del mundo, superando incluso al Olympic, y el más moderno del mundo, incluso se afirmaba que era insumergible, hasta su hundimiento en 1912.
+
+![Fotografia del Titanic](https://upload.wikimedia.org/wikipedia/commons/thumb/f/fd/RMS_Titanic_3.jpg/1024px-RMS_Titanic_3.jpg) 
+
+```{r}
+#| label: grafico-pasajeros
+#| echo: false
+
+
+# Cantidades de pasajeros por clase
+pasajeros_por_clase <- table(titanic_train$Pclass)
+
+# Gráfico de barras por clase de pasajero
+barplot(
+  height = pasajeros_por_clase,
+  main = "Cantidad de pasajeros por clase en el Titanic",
+  xlab = "Clase",
+  ylab = "Cantidad de pasajeros"  
+)
+```
+
+
+
+
+
